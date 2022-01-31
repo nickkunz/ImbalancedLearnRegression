@@ -1,0 +1,6 @@
+ImbalancedLearn-Regression-0.0.0: 2022-01-30
+==========================
+- Study of paper and implementation of imbalanced learn for regression
+- Define basic package dependencies
+- Prepare skeleton of pypi package to push to github
+
