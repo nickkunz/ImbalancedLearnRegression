@@ -7,7 +7,7 @@ import pandas
 housing = pandas.read_csv(
     
     ## http://jse.amstat.org/v19n3/decock.pdf
-    "https://raw.githubusercontent.com/nickkunz/smogn/master/data/housing.csv"
+    "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/housing.csv"
 )
 
 ## conduct smogn
