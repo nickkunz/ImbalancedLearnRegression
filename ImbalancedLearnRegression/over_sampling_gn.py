@@ -35,7 +35,7 @@ def over_sampling_gn(
     returns a pandas dataframe containing synthetic observations of the training
     set which are then returned to the higher main function 'gn()'
     
-    ref: !!!!! not modified
+    ref:
     
     Branco, P., Torgo, L., Ribeiro, R. (2017).
     SMOGN: A Pre-Processing Approach for Imbalanced Regression.
@@ -45,6 +45,14 @@ def over_sampling_gn(
     Branco, P., Ribeiro, R., Torgo, L. (2017). 
     Package 'UBL'. The Comprehensive R Archive Network (CRAN).
     https://cran.r-project.org/web/packages/UBL/UBL.pdf.
+
+    Branco, P., Torgo, L., & Ribeiro, R. P. (2019). 
+    Pre-processing approaches for imbalanced distributions in regression. 
+    Neurocomputing, 343, 76-99. 
+    https://www.sciencedirect.com/science/article/abs/pii/S0925231219301638
+
+    Kunz, N., (2019). SMOGN. 
+    https://github.com/nickkunz/smogn
     """
     
     ## subset original dataframe by bump classification index

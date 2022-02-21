@@ -16,7 +16,6 @@ def ro(
     ## main arguments / inputs
     data,                     ## training set (pandas dataframe)
     y,                        ## response variable y by name (string)
-    pert = 0.02,              ## perturbation / noise percentage (pos real)
     samp_method = "balance",  ## over / under sampling ("balance" or extreme")
     drop_na_col = True,       ## auto drop columns with nan's (bool)
     drop_na_row = True,       ## auto drop rows with nan's (bool)
@@ -110,10 +109,6 @@ def ro(
     if y in data.columns.values is False:
         raise ValueError("cannot proceed: y must be an header name (string) \
                found in the dataframe")
-    
-    ## quality check for perturbation
-    if pert > 1 or pert <= 0:
-        raise ValueError("pert must be a real number number: 0 < R < 1")
     
     ## quality check for sampling method
     if samp_method in ["balance", "extreme"] is False:
@@ -252,7 +247,6 @@ def ro(
                 data = data,
                 index = list(b_index[i].index),
                 perc = s_perc[i] if not manual_perc else perc_o + 1,  # modified
-                pert = pert,
                 replace = replace  # added
             )
             
