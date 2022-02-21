@@ -37,19 +37,19 @@ college_smogn = gn(
      
 )
 
-## load data
-diabetic = pandas.read_csv(
+# ## load data
+# diabetic = pandas.read_csv(
     
-    ## http://jse.amstat.org/v19n3/decock.pdf
-    "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/diabetic_data.csv"
-)
+#     ## http://jse.amstat.org/v19n3/decock.pdf
+#     "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/diabetic_data.csv"
+# )
 
-## conduct smogn
-diabetic_smogn = gn(
+# ## conduct smogn
+# diabetic_smogn = gn(
     
-    data = diabetic, 
-    y = "num_lab_procedures",
-    #replace = True,
-    #under_samp=False
+#     data = diabetic, 
+#     y = "num_lab_procedures",
+#     #replace = True,
+#     #under_samp=False
      
-)
+# )
