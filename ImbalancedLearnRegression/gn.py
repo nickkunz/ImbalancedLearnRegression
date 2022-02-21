@@ -255,10 +255,17 @@ def gn(
             ## concatenate over-sampling
             ## results to modified training set
             data_new = pd.concat([synth_obs, data_new])
+
+            # added
+            ## concatenate original data
+            ## to modified training set
+            original_obs = data.iloc[list(b_index[i].index)]
+            data_new = pd.concat([original_obs, data_new])
         
         ## under-sampling
-        if under_samp is True:
-            if s_perc[i] < 1:
+        if s_perc[i] < 1:  # exchanged
+            
+            if under_samp is True:  # exchanged
                 
                 ## drop observations in training set
                 ## considered 'normal' (not 'rare')
@@ -273,11 +280,15 @@ def gn(
                 ## concatenate under-sampling
                 ## results to modified training set
                 data_new = pd.concat([chosen_obs, data_new])  # modified
-        else:  # added
-            ## concatenate original
-            ## data to modified training set
-            original_obs = data.iloc[list(b_index[i].index)]
-            data_new = pd.concat([original_obs, data_new])
+            
+            # added
+            ## concatenate 'normal' data 
+            ## to modified training set 
+            ## without undersamping
+            else:
+                original_obs = data.iloc[list(b_index[i].index)]
+                data_new = pd.concat([original_obs, data_new])
+    
     
     ## rename feature headers to originals
     data_new.columns = feat_names

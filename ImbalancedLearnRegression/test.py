@@ -11,7 +11,7 @@ housing = pandas.read_csv(
 )
 
 ## conduct smogn
-housing_smogn = ro(
+housing_ro = ro(
     
     data = housing, 
     y = "SalePrice",
@@ -28,7 +28,7 @@ college = pandas.read_csv(
 )
 
 ## conduct smogn
-college_smogn = gn(
+college_gn = gn(
     
     data = college, 
     y = "Grad.Rate",
@@ -45,7 +45,7 @@ college_smogn = gn(
 # )
 
 # ## conduct smogn
-# diabetic_smogn = gn(
+# diabetic_gn = gn(
     
 #     data = diabetic, 
 #     y = "num_lab_procedures",

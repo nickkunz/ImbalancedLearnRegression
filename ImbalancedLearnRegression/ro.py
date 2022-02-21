@@ -252,9 +252,20 @@ def ro(
             ## results to modified training set
             data_new = pd.concat([synth_obs, data_new])
 
-        original_obs = data.iloc[list(b_index[i].index)]
-        data_new = pd.concat([original_obs, data_new])
-        
+            # added
+            ## concatenate original data
+            ## to modified training set
+            original_obs = data.iloc[list(b_index[i].index)]
+            data_new = pd.concat([original_obs, data_new])
+
+        if s_perc[i] < 1:
+            
+            # added
+            ## concatenate original data
+            ## to modified training set
+            original_obs = data.iloc[list(b_index[i].index)]
+            data_new = pd.concat([original_obs, data_new])
+
     
     ## rename feature headers to originals
     data_new.columns = feat_names
