@@ -78,12 +78,20 @@ def gn(
     values to perc_u and perc_o, these values will directly replace the 
     calculated percentage of each bin
     
-    ref: !!!!! not modified
+    ref:
     
     Branco, P., Torgo, L., Ribeiro, R. (2017).
     SMOGN: A Pre-Processing Approach for Imbalanced Regression.
     Proceedings of Machine Learning Research, 74:36-50.
     http://proceedings.mlr.press/v74/branco17a/branco17a.pdf.
+
+    Branco, P., Torgo, L., & Ribeiro, R. P. (2019). 
+    Pre-processing approaches for imbalanced distributions in regression. 
+    Neurocomputing, 343, 76-99. 
+    https://www.sciencedirect.com/science/article/abs/pii/S0925231219301638
+
+    Kunz, N., (2019). SMOGN. 
+    https://github.com/nickkunz/smogn
     """
     
     ## pre-process missing values

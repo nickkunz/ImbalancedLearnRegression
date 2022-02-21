@@ -49,12 +49,12 @@ def ro(
     while rare observations are placed in a seperate minority class subset 
     (rare bin) where they're over-sampled
     
-    under-sampling is applied by a random sampling from the normal bin based 
+    over-sampling is applied by a random sampling from the rare bin based 
     on a calculated percentage control by the argument 'samp_method', if the 
     specified input of 'samp_method' is "balance", less over-sampling is 
     conducted, and if "extreme" is specified more over-sampling is conducted
     
-    over-sampling is applied by RO, which random choose samples from the 
+    over-sampling is applied by RO, which randomly duplicate samples from the 
     original samples
     
     procedure concludes by post-processing and returns a modified pandas data
@@ -76,12 +76,20 @@ def ro(
     data from the original samples with the possibility of reusing the 
     same sample
     
-    ref: !!!!! not modified
+    ref:
     
     Branco, P., Torgo, L., Ribeiro, R. (2017).
     SMOGN: A Pre-Processing Approach for Imbalanced Regression.
     Proceedings of Machine Learning Research, 74:36-50.
     http://proceedings.mlr.press/v74/branco17a/branco17a.pdf.
+
+    Branco, P., Torgo, L., & Ribeiro, R. P. (2019). 
+    Pre-processing approaches for imbalanced distributions in regression. 
+    Neurocomputing, 343, 76-99. 
+    https://www.sciencedirect.com/science/article/abs/pii/S0925231219301638
+
+    Kunz, N., (2019). SMOGN. 
+    https://github.com/nickkunz/smogn
     """
     
     ## pre-process missing values

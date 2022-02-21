@@ -1,22 +1,22 @@
 ## This README file is a copy from Nick Kunz's package SMOGN and should be modified by the end of Winter 2022 semester!
 
 <div align="center">
-  <img src="https://github.com/nickkunz/smogn/blob/master/media/images/smogn_banner.png">
+  <img src="https://github.com/paobranco/smogn/blob/master/media/images/smogn_banner.png">
 </div>
 
-## Synthetic Minority Over-Sampling Technique for Regression with Gaussian Noise
+## Imbalanced Learn Regression
 [![PyPI version](https://badge.fury.io/py/smogn.svg)](https://badge.fury.io/py/smogn)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.com/nickkunz/smogn.svg?branch=master)](https://travis-ci.com/nickkunz/smogn)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1bfe5a201f3b4a9787c6cf4b365736ed)](https://www.codacy.com/manual/nickkunz/smogn?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nickkunz/smogn&amp;utm_campaign=Badge_Grade)
-![GitHub last commit](https://img.shields.io/github/last-commit/nickkunz/smogn)
+![GitHub last commit](https://img.shields.io/github/last-commit/paobranco/ImbalancedLearnRegression)
 
 ## Description
-A Python implementation of Synthetic Minority Over-Sampling Technique for Regression with Gaussian Noise (SMOGN). Conducts the Synthetic Minority Over-Sampling Technique for Regression (SMOTER) with traditional interpolation, as well as with the introduction of Gaussian Noise (SMOTER-GN). Selects between the two over-sampling techniques by the KNN distances underlying a given observation. If the distance is close enough, SMOTER is applied. If too far away, SMOTER-GN is applied. Useful for prediction problems where regression is applicable, but the values in the interest of predicting are rare or uncommon. This can also serve as a useful alternative to log transforming a skewed response variable, especially if generating synthetic data is also of interest.
+A Python implementation of sampling techniques for Regression. Conducts different sampling techniques for Regression. Useful for prediction problems where regression is applicable, but the values in the interest of predicting are rare or uncommon. This can also serve as a useful alternative to log transforming a skewed response variable, especially if generating synthetic data is also of interest.
 <br>
 
 ## Features
-1. The only open-source Python supported version of Synthetic Minority Over-Sampling Technique for Regression.
+1. An open-source Python supported version of sampling techniques for Regression, a variation of Nick Kunz's package SMOGN.
 
 2. Supports Pandas DataFrame inputs containing mixed data types, auto distance metric selection by data type, and optional auto removal of missing values.
 
@@ -32,30 +32,39 @@ A Python implementation of Synthetic Minority Over-Sampling Technique for Regres
 ## Installation
 ```python
 ## install pypi release
-pip install smogn
+pip install ImbalancedLearnRegression
 
 ## install developer version
-pip install git+https://github.com/nickkunz/smogn.git
+pip install git+https://github.com/paobranco/ImbalancedLearnRegression.git
 ```
 
 ## Usage
 ```python
 ## load libraries
-import smogn
+import ImbalancedLearnRegression
 import pandas
 
 ## load data
 housing = pandas.read_csv(
     
     ## http://jse.amstat.org/v19n3/decock.pdf
-    "https://raw.githubusercontent.com/nickkunz/smogn/master/data/housing.csv"
+    "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/housing.csv"
 )
 
-## conduct smogn
-housing_smogn = smogn.smoter(
+## conduct ro
+housing_ro = ro(
     
     data = housing, 
     y = "SalePrice"
+    
+)
+
+## conduct gn
+housing_gn = gn(
+    
+    data = housing, 
+    y = "SalePrice"
+    
 )
 ```
 
@@ -66,12 +75,21 @@ housing_smogn = smogn.smoter(
 
 ## License
 
-© Nick Kunz, 2019. Licensed under the General Public License v3.0 (GPLv3).
+© Paula Branco, 2022. Licensed under the General Public License v3.0 (GPLv3).
 
 ## Contributions
 
-SMOGN is open for improvements and maintenance. Your help is valued to make the package better for everyone.
+ImbalancedLearnRegression is open for improvements and maintenance. Your help is valued to make the package better for everyone.
 
 ## Reference
 
 Branco, P., Torgo, L., Ribeiro, R. (2017). SMOGN: A Pre-Processing Approach for Imbalanced Regression. Proceedings of Machine Learning Research, 74:36-50. http://proceedings.mlr.press/v74/branco17a/branco17a.pdf.
+
+Branco, P., Torgo, L., & Ribeiro, R. P. (2019). Pre-processing approaches for imbalanced distributions in regression. Neurocomputing, 343, 76-99. https://www.sciencedirect.com/science/article/abs/pii/S0925231219301638
+
+Kunz, N., (2019). SMOGN. https://github.com/nickkunz/smogn
+
+Torgo, L., Ribeiro, R. P., Pfahringer, B., & Branco, P. (2013, September). Smote for regression. In Portuguese conference on artificial intelligence (pp. 378-389). Springer, Berlin, Heidelberg. https://link.springer.com/chapter/10.1007/978-3-642-40669-0_33
+
+
+

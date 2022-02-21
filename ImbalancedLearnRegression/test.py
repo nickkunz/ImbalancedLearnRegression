@@ -10,7 +10,7 @@ housing = pandas.read_csv(
     "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/housing.csv"
 )
 
-## conduct smogn
+## conduct ro
 housing_ro = ro(
     
     data = housing, 
@@ -27,7 +27,7 @@ college = pandas.read_csv(
     "https://raw.githubusercontent.com/paobranco/ImbalancedLearnRegression/master/data/College.csv"
 )
 
-## conduct smogn
+## conduct gn
 college_gn = gn(
     
     data = college, 
