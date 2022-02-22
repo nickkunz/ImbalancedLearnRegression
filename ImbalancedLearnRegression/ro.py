@@ -19,7 +19,7 @@ def ro(
     samp_method = "balance",  ## over / under sampling ("balance" or extreme")
     drop_na_col = True,       ## auto drop columns with nan's (bool)
     drop_na_row = True,       ## auto drop rows with nan's (bool)
-    replace = False,           ## sampling replacement (bool)
+    replace = True,           ## sampling replacement (bool)
     manual_perc = False,      ## user defines percentage of under-sampling and over-sampling  # added
     perc_o = -1,              ## percentage of over-sampling  # added
     
